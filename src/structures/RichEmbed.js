@@ -182,6 +182,15 @@ class RichEmbed {
     this.footer = { text, icon_url: icon };
     return this;
   }
+
+  /**
+   * Sends the embed to the channel/user
+   * @param {Channel|User|GuildMember} recipient The recipient
+   * @returns {Promise<Message>}
+   */
+  sendTo(recipient) {
+    return recipient.sendEmbed(this);
+  }
 }
 
 module.exports = RichEmbed;
